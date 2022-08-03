@@ -1,16 +1,22 @@
+import { Profile } from "./Profile/Profile";
+import { Stats } from "./Stats/Stats";
+import { FriendList } from "./FriendList/FriendList";
+import { FriendListItem } from "./FriendListItem/FriendListItem";
+import { Transactions } from "./Transactions/Transactions";
+import user from "../data/user"
+
+// username, tag, location, avatar, stats.followers,stats.views, stats.likes
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div>
+      <Profile user = {user}/>
+      <Stats/>
+      <FriendList>
+        <FriendListItem></FriendListItem>
+      </FriendList>
+      <Transactions/>
+
     </div>
   );
 };
