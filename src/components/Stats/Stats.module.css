@@ -1,0 +1,15 @@
+.title {
+	text-align:center;
+}
+
+.statList {
+	text-align:center;
+	justify-content:center;
+	display:flex;
+}
+
+.statListItem {
+	display:flex;
+	flex-direction:column;
+	padding: 16px;
+}
