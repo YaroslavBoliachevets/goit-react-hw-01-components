@@ -5,11 +5,16 @@ import { FriendListItem } from './FriendListItem/FriendListItem';
 import { Transactions } from './Transactions/Transactions';
 import user from '../data/user.json';
 
-
 export const App = () => {
   return (
     <div>
-      <Profile user={user}/>
+      <Profile
+        username={user.username}
+        tag={user.tag}
+        location={user.location}
+        avatar={user.avatar}
+        stats={user.stats}
+      />
       <Stats />
       <FriendList>
         <FriendListItem></FriendListItem>
