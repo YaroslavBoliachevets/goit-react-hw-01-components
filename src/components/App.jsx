@@ -1,22 +1,20 @@
-import { Profile } from "./Profile/Profile";
-import { Stats } from "./Stats/Stats";
-import { FriendList } from "./FriendList/FriendList";
-import { FriendListItem } from "./FriendListItem/FriendListItem";
-import { Transactions } from "./Transactions/Transactions";
-import user from "../data/user"
+import { Profile } from './Profile/Profile';
+import { Stats } from './Stats/Stats';
+import { FriendList } from './FriendList/FriendList';
+import { FriendListItem } from './FriendListItem/FriendListItem';
+import { Transactions } from './Transactions/Transactions';
+import user from '../data/user.json';
 
-// username, tag, location, avatar, stats.followers,stats.views, stats.likes
 
 export const App = () => {
   return (
     <div>
-      <Profile user = {user}/>
-      <Stats/>
+      <Profile user={user}/>
+      <Stats />
       <FriendList>
         <FriendListItem></FriendListItem>
       </FriendList>
-      <Transactions/>
-
+      <Transactions />
     </div>
   );
 };
