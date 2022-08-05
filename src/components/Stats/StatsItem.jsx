@@ -1,11 +1,11 @@
-import css from './Stats.module.css';
 import PropTypes from 'prop-types';
+import {StatsListItem, LabelStats, Percentage} from './Stats.styled';
 
 export const StatsItem = ({id, label, percentage}) => {
-	return <li className={css.statListItem} key={id}>
-      <span className="label">{label}</span>
-      <span className="percentage">{percentage}</span>
-    </li>
+	return <StatsListItem key={id}>
+      <LabelStats>{label}</LabelStats>
+      <Percentage>{percentage}%</Percentage>
+    </StatsListItem>
 }
 
 StatsItem.propTypes = {

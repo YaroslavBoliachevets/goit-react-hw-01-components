@@ -1,42 +1,49 @@
 import PropTypes from 'prop-types';
-import css from './Profile.module.css';
+import {
+  ProfileCard,
+  Description,
+  Avatar,
+  InfoName,
+  InfoAdditional,
+  StatsList,
+  StatsItem,
+  StatsValue,
+  Label,
+} from './Profile.styled';
 
-export const Profile = ({username, tag, location, avatar, stats}) => {
-
-	return <div className={css.profile}>
-	<div className={css.description}>
-	  <img
-		src={avatar}
-		alt="User avatar"
-		className={css.avatar}
-	  />
-	  <p className={css.name}>{username}</p>
-	  <p className={css.tag}>@{tag}</p>
-	  <p className={css.location}>{location}</p> 
-	</div>
-	<ul className={css.stats}>
-	  <li className={css.statsItem}>
-		<span className={css.label}>Followers</span>
-		<span className="quantity">{stats.followers}</span>
-	  </li>
-	  <li className={css.statsItem}>
-		<span className={css.label}>Views</span>
-		<span className="quantity">{stats.views}</span>
-	  </li>
-	  <li className={css.statsItem}>
-		<span className={css.label}>Likes</span>
-		<span className="quantity">{stats.likes}</span>
-	  </li>
-	</ul>
-  </div>
-}
+export const Profile = ({ username, tag, location, avatar, stats }) => {
+  return (
+    <ProfileCard>
+      <Description>
+        <Avatar src={avatar} alt="User avatar" />
+        <InfoName>{username}</InfoName>
+        <InfoAdditional>@{tag}</InfoAdditional>
+        <InfoAdditional>{location}</InfoAdditional>
+      </Description>
+      <StatsList>
+        <StatsItem>
+          <Label>Followers</Label>
+          <StatsValue>{stats.followers}</StatsValue>
+        </StatsItem>
+        <StatsItem>
+          <Label>Views</Label>
+          <StatsValue>{stats.views}</StatsValue>
+        </StatsItem>
+        <StatsItem>
+          <Label>Likes</Label>
+          <StatsValue>{stats.likes}</StatsValue>
+        </StatsItem>
+      </StatsList>
+    </ProfileCard>
+  );
+};
 
 Profile.propTypes = {
-	username: PropTypes.string,
-	tag: PropTypes.string,
-	location: PropTypes.string,
-	avatar: PropTypes.string, 
-	followers: PropTypes.number,
-	views: PropTypes.number,
-	likes: PropTypes.number
-}
+  username: PropTypes.string,
+  tag: PropTypes.string,
+  location: PropTypes.string,
+  avatar: PropTypes.string,
+  followers: PropTypes.number,
+  views: PropTypes.number,
+  likes: PropTypes.number,
+};

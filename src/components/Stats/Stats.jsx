@@ -1,12 +1,12 @@
-import css from './Stats.module.css';
 import { StatsItem } from './StatsItem';
+import {StatisticsSection, Title, StatList} from './Stats.styled'
 
 export const Statistics = ({ title, stats }) => {
   return (
-    <section className="statistics">
-      <h2 className={css.title}>{title}</h2>
+    <StatisticsSection>
+      <Title>{title}</Title>
 
-      <ul className={css.statList}>
+      <StatList>
         {stats.map(statsItem => (
           <StatsItem
             key={statsItem.id}
@@ -15,7 +15,8 @@ export const Statistics = ({ title, stats }) => {
             percentage={statsItem.percentage}
           />
         ))}
-      </ul>
-    </section>
+      </StatList>
+      
+    </StatisticsSection>
   );
 };
