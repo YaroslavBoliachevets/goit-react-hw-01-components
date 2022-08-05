@@ -1,7 +1,6 @@
 import { Profile } from './Profile/Profile';
 import { Statistics } from './Stats/Stats';
 import { FriendList } from './FriendList/FriendList';
-import { FriendListItem } from './FriendListItem/FriendListItem';
 import { Transactions } from './Transactions/Transactions';
 // ==================================
 import user from '../data/user.json';
@@ -22,9 +21,6 @@ export const App = () => {
 
       <FriendList friends={friends} />;
 
-      <FriendList>
-        <FriendListItem></FriendListItem>
-      </FriendList>
       <Transactions />
     </div>
   );
