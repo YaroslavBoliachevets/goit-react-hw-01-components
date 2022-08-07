@@ -20,7 +20,7 @@ export const Tbody = styled.tbody`
 
 export const Transaction = styled.tr`
 :nth-child(2n) td{
-	background-color:${p=>p.theme.colors.aqua}
+	background-color:${p=>p.theme.colors.mainBackgroundColor}
 };
 `;
 

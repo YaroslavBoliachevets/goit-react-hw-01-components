@@ -1,5 +1,5 @@
-import { StatsItem } from './StatsItem';
-import {StatisticsSection, Title, StatList} from './Stats.styled'
+import PropTypes from 'prop-types';
+import {StatisticsSection, Title, StatList,StatsListItem, LabelStats, Percentage } from './Stats.styled'
 
 export const Statistics = ({ title, stats }) => {
   return (
@@ -8,15 +8,22 @@ export const Statistics = ({ title, stats }) => {
 
       <StatList>
         {stats.map(statsItem => (
-          <StatsItem
-            key={statsItem.id}
-            id={statsItem.id}
-            label={statsItem.label}
-            percentage={statsItem.percentage}
-          />
+          <StatsListItem key={statsItem.id}>
+            <LabelStats>{statsItem.label}</LabelStats>
+            <Percentage>{statsItem.percentage}%</Percentage>
+        </StatsListItem>
         ))}
       </StatList>
       
     </StatisticsSection>
   );
 };
+
+StatsListItem.propTypes = {
+  statsItem: PropTypes.exact({
+    id: PropTypes.string,
+    label: PropTypes.string,
+    percentage: PropTypes.number,
+  })
+
+}
